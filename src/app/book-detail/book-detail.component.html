@@ -1,0 +1,107 @@
+
+
+<ui-view></ui-view>
+<div class="ui-g-12">
+<mat-drawer-container class="example-container" style="background-color:#3f51b5;">
+  <mat-drawer mode="side" opened="true" style="background-color:#3f51b5;">
+    <div class="ui-g">
+      <mat-list>
+        <mat-list-item style="cursor:pointer;color:white;" uiSref="book-create" uiSrefActive="active">Add Books</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </mat-drawer>
+    <mat-drawer-content>
+      <mat-card style="margin: 10px 200px 10px 100px;border: 0.1px solid;height: 800px;">
+        <mat-card-content>
+          <h2 class="example-h2">{{ book.title }}</h2>
+          <mat-tab-group class="demo-tab-group">
+            <mat-tab label="ISBN">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                 <ul>
+                   <li>{{ book.isbn }}</li>
+                 </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Author">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                 <ul>
+                   <li>{{ book.author }}</li>
+                 </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Description">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                <ul>
+                  <li>
+                    {{ book.description }}
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Publisher">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                <ul>
+                  <li>
+                    {{ book.publisher }}
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Published Date">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                <ul>
+                  <li>
+                    {{ book.published_date }}
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Availability">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                <ul>
+                  <li>
+                    {{ book.available }}
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Genre">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                <ul>
+                  <li>
+                    {{ book.genre }}
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Types Available">
+              <div class="demo-tab-content" style="height: 200px">
+                <br>
+                <ul>
+                  <li>
+                    {{ book.type }}
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+          <mat-card-actions>
+            <!-- <a [routerLink]="['/book-edit', book._id]" class="btn btn-success">EDIT</a> -->
+            <button style="border: 1px solid;" (click)="deleteBook(book._id)" color="accent">DELETE</button>
+            <a uiSref="book-edit" [uiParams]="{id: book._id}" uiSrefActive="active">Edit</a>
+            <!-- <button class="btn btn-danger" type="button" (click)="deleteBook(book._id)">DELETE</button> -->
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+
+    </mat-drawer-content>
+</mat-drawer-container>
+</div>

@@ -1,0 +1,38 @@
+<div class="ui-g-12">
+<mat-drawer-container class="example-container" style="background-color:#3f51b5;">
+  <mat-drawer mode="side" opened="true" style="background-color:#3f51b5;">
+    <div class="ui-g">
+      <mat-list>
+        <mat-list-item style="cursor:pointer;color:white;" uiSref="book-create" uiSrefActive="active">Add Books</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="ui-g-12">
+      <mat-card style="margin: 10px 200px 10px 100px;border: 0.1px solid;height: 800px;">
+      <p-table [value]="books">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Action</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-book>
+              <tr>
+                  <td>{{book.title}}</td>
+                  <td>{{book.author}}</td>
+                  <td>
+                    <mat-chip-list>
+                      <mat-chip style="color:#3f51b5;cursor:pointer;background-color: white;border: 1px solid rgb(63, 81, 181);" selected="true" uiSref="book-detail" [uiParams]="{id: b._id}" uiSrefActive="active">Show Detail</mat-chip>
+                      </mat-chip-list>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+  </mat-card>
+  </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+</div>

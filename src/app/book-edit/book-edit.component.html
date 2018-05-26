@@ -1,0 +1,59 @@
+
+<form (ngSubmit)="updateBook(book._id,book)" #bookForm="ngForm" style="margin: 40px 100px 20px 300px;">
+          <span class="ui-float-label">
+              <input id="float-input" type="text" [(ngModel)]="book.isbn" name="isbn" required #isbn="ngModel">
+              <label for="float-input">ISBN</label>
+              <!-- <span *ngIf="!isbn.valid && isbn.touched">
+                <p-message severity="error" text="Field is required"></p-message> -->
+              <!-- </span> -->
+          </span>
+          <br>
+          <span class="ui-float-label">
+              <input id="float-input" type="text" [(ngModel)]="book.title" name="title" required #title="ngModel">
+              <label for="float-input">Title</label>
+              <!-- <span *ngIf="!title.valid && title.touched">
+                <p-message severity="error" text="Field is required"></p-message>
+              </span> -->
+          </span>
+          <br>
+          <span class="ui-float-label">
+              <input id="float-input" type="text" [(ngModel)]="book.author" name="author" required #author="ngModel">
+              <label for="float-input">Author</label>
+              <!-- <span *ngIf="!author.valid && author.touched">
+                <p-message severity="error" text="Field is required"></p-message>
+              </span> -->
+          </span>
+          <br>
+          <span class="ui-float-label">
+              <input id="float-input" type="text" [(ngModel)]="book.description" name="description" required #description="ngModel">
+              <label for="float-input">Description</label>
+              <!-- <span *ngIf="!description.valid && description.touched">
+                <p-message severity="error" text="Field is required"></p-message>
+              </span> -->
+          </span>
+          <br>
+          <span class="ui-float-label">
+              <input id="float-input" type="text" [(ngModel)]="book.publisher" name="publisher" required #publisher="ngModel">
+              <label for="float-input">Publisher</label>
+              <!-- <span *ngIf="!publisher.valid && publisher.touched">
+                <p-message severity="error" text="Field is required"></p-message>
+              </span> -->
+          </span>
+          <br>
+           <h5>Published Date:</h5>
+           <p-calendar [(ngModel)]="book.published_date" name="book.published_date"></p-calendar>
+           <br>
+           <div class="ui-g" style="display:block;">
+             <h5>Availability:</h5>
+             <div class="ui-g-12"><p-radioButton name="group1" value="Yes" label="Yes" [(ngModel)]="book.available" inputId="opt1"></p-radioButton></div>
+             <div class="ui-g-12"><p-radioButton name="group1" value="No" label="No" [(ngModel)]="book.available" inputId="opt2"></p-radioButton></div>
+           </div>
+           <h5>Genre:</h5>
+           <div class="ui-g" style="width:250px;margin-bottom:10px">
+               <div class="ui-g-12"><p-radioButton name="group2" value="Fiction" label="Fiction" [(ngModel)]="book.genre" inputId="Fiction"></p-radioButton></div>
+               <div class="ui-g-12"><p-radioButton name="group2" value="Science and Technology" label="Science and Technology" [(ngModel)]="book.genre" inputId="Science and Technology"></p-radioButton></div>
+               <div class="ui-g-12"><p-radioButton name="group2" value="Comic" label="Comic" [(ngModel)]="book.genre" inputId="Comic"></p-radioButton></div>
+               <div class="ui-g-12"><p-radioButton name="group2" value="Engineering" label="Engineering" [(ngModel)]="book.genre" inputId="Engineering"></p-radioButton></div>
+           </div>
+          <button type="submit" style="border: 1px solid;" [disabled]="!bookForm.form.valid" color="primary">ADD BOOK</button>
+          </form>
