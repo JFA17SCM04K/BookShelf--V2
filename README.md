@@ -145,7 +145,7 @@ Version 2: https://github.com/JFA17SCM04K/BookShelf--V2
 Setup an account with mlabs.
 2.	Run npm install to install all the dependencies from the package.json.
 
-To see the application in action, open the browser and navigate to : https://secure-sierra-24983.herokuapp.com/books
+To see the application in action, open the browser and navigate to : https://secure-sierra-24983.herokuapp.com/
 
 
 
